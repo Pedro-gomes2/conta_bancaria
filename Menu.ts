@@ -8,7 +8,7 @@ function main() {
 
     while (true) {
 
-        console.log(colors.bg.black, colors.fg.yellow,
+        console.log(colors.bg.green, colors.fg.yellow,
             "*************************************************************");
         console.log("                                                     ");
         console.log("                BANCO DO BRAZIL COM Z                ");
@@ -24,12 +24,12 @@ function main() {
         console.log("            7 - Depositar                            ");
         console.log("            8 - Transferir valores entre Contas      ");
         console.log("            9 - Sair                                 ");
-        console.log("                                                     ");
-        console.log("*****************************************************");
-        console.log("                                                     ",
-        colors.reset);
+        //console.log("                                                     ");
+        console.log("*****************************************************"), colors.reset;
+        //console.log("                                                     ",
+        
 
-        console.log("Entre com a opção desejada: ");
+        console.log(colors.bg.green, colors.fg.yellow,"Entre com a opção desejada: ",colors.reset);
         opcao = leia.questionInt("");
 
         if (opcao == 9) {
@@ -43,12 +43,12 @@ function main() {
         switch (opcao) {
             case 1:
                 console.log(colors.fg.whitestrong,
-                    "\nCriar Conta\n",colors.reset, colors.reset);
+                    "\nCriar Conta\n",colors.reset);
 
                 break;
             case 2:
                 console.log(colors.fg.whitestrong,
-                    "\nListar todas as Contas\n",colors.reset,colors.reset);
+                    "\nListar todas as Contas\n",colors.reset);
 
                 break;
             case 3:
@@ -86,7 +86,7 @@ function main() {
 
 
 export function sobre(): void {
-    console.log("\n*,colors.reset****************************************************");
+    console.log("\n*****************************************************");
     console.log("Projeto Desenvolvido por: João Pedro ");
     console.log("Generation Brasil - generation@generation.org");
     console.log("github.com/Pedro-gomes2/conta_bancaria");
