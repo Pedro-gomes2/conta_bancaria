@@ -1,3 +1,139 @@
-export class Conta {
+import console from "node:console";
+import { colors } from "../util/Colors";
+
+export class Conta{
     
+    // Atributo da Classe
+    private _numero: number;
+    private _agencia:number;
+    private _titular: string;
+    private _tipo:number;
+    private _saldo:number;
+
+    // Método construtor 
+    //"this" é a referencia a esse atributo 
+	constructor(numero: number, agencia: number, titular: string, tipo: number, saldo: number) {
+		this._numero = numero;
+		this._agencia = agencia;
+		this._titular = titular;
+		this._tipo = tipo;
+		this._saldo = saldo;
+	}
+    
+    //Metodos get e set "ctrl+shift+P "
+	public get numero(): number {
+		return this._numero;
+	}
+
+    
+	public get agencia(): number {
+		return this._agencia;
+	}
+
+    
+	public get titular(): string {
+		return this._titular;
+	}
+
+    
+	public get tipo(): number {
+		return this._tipo;
+	}
+
+    
+	public get saldo(): number {
+		return this._saldo;
+	}
+
+    
+	public set numero(value: number) {
+		this._numero = value;
+	}
+
+    
+	public set agencia(value: number) {
+		this._agencia = value;
+	}
+
+   
+	public set titular(value: string) {
+		this._titular = value;
+	}
+
+   
+	public set tipo(value: number) {
+		this._tipo = value;
+	}
+
+    
+	public set saldo(value: number) {
+		this._saldo = value;
+	}
+
+    //Métodos Auxiliares
+
+    public sacar(valor:number): boolean{
+        
+        if(valor <=  0){
+            console.log(colors.fg.red, "O valor deve ser positivo", colors.reset);
+            return false;
+        }
+
+        
+        if(valor > this._saldo){
+            console.log(colors.fg.red, "Saldo Insuficiente", colors.reset);
+            return false;
+        }
+
+        this.saldo -= valor;
+        return true;
+
+
+    }
+
+    public depositar(valor:number): void{
+        if(valor <=  0)
+            console.log(colors.fg.red, "O valor deve ser positivo", colors.reset);
+        else 
+            this._saldo += valor;
+            
+        
+
+        
+    }    
+    public visualizar(): void{
+
+         let tipo: string;
+
+        switch(this._tipo){
+            case 1:
+                tipo =" Conta Corrente";
+            break;
+            case 2:
+                tipo = " Conta Poupança";
+            break;
+            default:
+                tipo = "conta Invalida";
+
+    }
+
+
+
+        console.log("\n***************************");
+        console.log("******DADOS DA CONTA*******");
+        console.log("***************************");
+        console.log(`Numero da conta: ${this._numero}`);
+        console.log(`Numero da agencia: ${this._agencia}`);
+        console.log(`Nome do titula: ${this._titular}`);
+        console.log(`tipo da conta: ${tipo}`);
+        console.log(`Saldo da conta: R$ ${this._saldo.toFixed(2)}`);
+
+
 }
+
+
+
+
+
+}
+    

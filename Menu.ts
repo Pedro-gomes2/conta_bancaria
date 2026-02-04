@@ -1,10 +1,39 @@
 import leia = require("readline-sync");
 import { colors }  from './src/util/Colors';
-
+import { Conta } from "./src/model/conta";
 
 function main() {
 
     let opcao: number;
+
+    //instannciar objetos da classe conta 
+
+    const c1 = new Conta(1,1234,"Joao",1,100000.00);
+
+    c1.visualizar();
+    // Testando Metodo Sacar 
+    console.log("Sacar 100:",c1.sacar(100));
+    console.log("Sacar 2000000:",c1.sacar(1000000.00));
+    console.log("Sacar 0:",c1.sacar(0));
+
+    //Teste metodo Depositar
+    console.log(" Depositar 0");
+    c1.depositar(-10);
+    
+    console.log(" Depositar 500");
+    c1.depositar(500);
+
+    c1.visualizar();
+
+
+
+    //console.log("O titular da conta : ", c1.titular);
+  
+    //c1.sacar(500);
+    //console.log(`Seu novo saldo`,c1.saldo);
+
+
+
 
     while (true) {
 
