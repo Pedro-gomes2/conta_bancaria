@@ -38,7 +38,7 @@ function main() {
 
     while (true) {
 
-        console.log(colors.bg.black, colors.fg.yellow,
+        console.log(colors.bg.green, colors.fg.yellow,
             "*************************************************************");
         console.log("                                                     ");
         console.log("                BANCO DO BRAZIL COM Z                ");
@@ -59,7 +59,7 @@ function main() {
         //console.log("                                                     ",
         
 
-        console.log(colors.bg.black, colors.fg.yellow,"Entre com a opção desejada: ",colors.reset);
+        console.log(colors.bg.green, colors.fg.yellow,"Entre com a opção desejada: ",colors.reset);
         opcao = Input.questionInt("");
 
         if (opcao == 9) {

@@ -103,7 +103,7 @@ export class Conta{
     }    
     public visualizar(): void{
 
-         let tipo: string;
+        let tipo: string;
 
         switch(this._tipo){
             case 1:
