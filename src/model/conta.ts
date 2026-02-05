@@ -1,7 +1,7 @@
 import console from "node:console";
 import { colors } from "../util/Colors";
 
-export class Conta{
+export  abstract class Conta{
     
     // Atributo da Classe
     private _numero: number;
@@ -85,7 +85,7 @@ export class Conta{
             return false;
         }
 
-        this.saldo -= valor;
+        this._saldo -= valor;
         return true;
 
 
@@ -124,7 +124,7 @@ export class Conta{
         console.log("***************************");
         console.log(`Numero da conta: ${this._numero}`);
         console.log(`Numero da agencia: ${this._agencia}`);
-        console.log(`Nome do titula: ${this._titular}`);
+        console.log(`Nome do titular: ${this._titular}`);
         console.log(`tipo da conta: ${tipo}`);
         console.log(`Saldo da conta: R$ ${this._saldo.toFixed(2)}`);
 

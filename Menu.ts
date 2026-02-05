@@ -2,6 +2,8 @@ import leia = require("readline-sync");
 import { colors }  from './src/util/Colors';
 import { Conta } from "./src/model/Conta";
 import { Input } from "./src/util/Inputs";
+import { ContaCorrente } from "./src/model/ContaCorrente";
+import { ContaPoupanca } from "./src/model/ContaPoupanca";
 
 function main() {
 
@@ -9,33 +11,52 @@ function main() {
 
     //instannciar objetos da classe conta 
 
-    const c1 = new Conta(1,1234,"Joao",1,100000.00);
+    // const c1 = new Conta(1,1234,"Joao",1,100000.00);
 
-    c1.visualizar();
-    // Testando Metodo Sacar 
-    console.log("Sacar 100:",c1.sacar(100));
-    console.log("Sacar 2000000:",c1.sacar(1000000.00));
-    console.log("Sacar 0:",c1.sacar(0));
+    // c1.visualizar();
+    // // Testando Metodo Sacar 
+    // console.log("Sacar 100:",c1.sacar(100));
+    // console.log("Sacar 2000000:",c1.sacar(1000000.00));
+    // console.log("Sacar 0:",c1.sacar(0));
 
-    //Teste metodo Depositar
-    console.log(" Depositar 0");
-    c1.depositar(0);
+    // //Teste metodo Depositar
+    // console.log(" Depositar 0");
+    // c1.depositar(0);
     
-    console.log(" Depositar 500");
-    c1.depositar(500);
+    // console.log(" Depositar 500");
+    // c1.depositar(500);
 
-    c1.visualizar();
+    // c1.visualizar();
 
 
-    //usando o metodo get titular
-    //console.log("O titular da conta : ", c1.titular);
+    // //usando o metodo get titular
+    // //console.log("O titular da conta : ", c1.titular);
   
-    //c1.sacar(500);
-    //console.log(`Seu novo saldo`,c1.saldo);
+    // //c1.sacar(500);
+    // //console.log(`Seu novo saldo`,c1.saldo);
+
+    //teste da classe conta corrente
+
+    /*const cc1 =  new ContaCorrente(2,5678,"Bianca",1,2000.00,2000.0);
+    
+    
+    //console.log(cc1.agencia);
+    //console.log(cc1.titular);
+    cc1.visualizar();*/
+    
+
+    const cp = new ContaPoupanca(3,2468,"Pedro",2,3000,"02/02/2010");
+    cp.visualizar();
+    let saque = Input.questionInt("digite o valor: ")
+    console.log(`Valor de sacado:  ${saque}`);
+    cp.sacar(saque);
+    cp.visualizar();
+    
 
 
 
 
+    //testando metodo visualizar -- Conta Poupança
     while (true) {
 
         console.log(colors.bg.black, colors.fg.yellow,
