@@ -1,50 +1,26 @@
 import { colors } from "../util/Colors";
 import { Conta } from "./Conta";
 
+
 export class ContaPoupanca extends Conta{
     
-    private _nasc:string;
+    private _aniversario:number;
 
-
-	constructor(numero: number, agencia: number, titular: string, tipo: number, saldo: number, nasc: string) {
+	constructor(numero: number, agencia: number, titular: string, tipo: number, saldo: number, aniversario: number) {
 		super(numero,agencia,titular,tipo,saldo);
         
-        this._nasc =  nasc;
-
-
+        this._aniversario =  aniversario;
+	}  
+	public get aniversario(): number {
+		return this._aniversario;
 	}
-
-    
-	public get nasc(): string {
-		return this._nasc;
+	public set aniversario(value: number) {
+		this._aniversario = value;
 	}
-
-    
-	public set nasc(Data: string) {
-		this._nasc = Data;
-	}
-
-    public sacar(valor:number): boolean{
-        if(valor <=  0){
-                    console.log(colors.fg.red, "O valor deve ser positivo", colors.reset);
-                    return false;
-                }
-        
-                
-                if(valor > this.saldo){
-                    console.log(colors.fg.red, "Saldo Insuficiente", colors.reset);
-                    return false;
-                }
-        
-                this.saldo -= valor;
-                return true;
-        
-
-    }
     public visualizar(): void{
         //chamando o metodo visualizar 
         super.visualizar();
-        console.log(`Data de Nascimento: ${this.nasc}`);
+        console.log(`Data de Aniversario: ${this._aniversario}`);
     }
         
                 

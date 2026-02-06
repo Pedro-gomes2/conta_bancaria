@@ -45,7 +45,7 @@ function main() {
     cc1.visualizar();*/
     
 
-    const cp = new ContaPoupanca(3,2468,"Pedro",2,3000,"02/02/2010");
+    const cp = new ContaPoupanca(3,2468,"Pedro",2,3000,"02-02-2000" );
     cp.visualizar();
     let saque = Input.questionInt("digite o valor: ")
     console.log(`Valor de sacado:  ${saque}`);

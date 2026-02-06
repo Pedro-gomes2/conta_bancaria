@@ -101,7 +101,7 @@ export  abstract class Conta{
 
         
     }    
-    public visualizar(): void{
+    public  visualizar(): void{
 
         let tipo: string;
 
